@@ -33,9 +33,8 @@ Same result, fewer transactions. With larger groups, the reduction is even bigge
 
 | | |
 |---|---|
-| **Frontend** | React + TypeScript |
-| **Backend** | Node.js + Express.js + Next.js |
-| **Database** | MongoDB |
+| **Frontend** | HTML + CSS + JavaScript. |
+| **Backend** | Vanilla JavaScript |
 | **Hosting** | Netlify |
 
 ---

@@ -1,0 +1,221 @@
+/* === PREMIUM CSS STYLING === */
+:root {
+    --primary: #1E1B4B;
+    --slate: #475569;
+    --accent: #14B8A6;
+    --bg-gradient: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+    --card: #FFFFFF;
+    --border: #E2E8F0;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    --input-bg: #F8FAFC;
+}
+
+/* 🌙 DARK MODE VARIABLES */
+[data-theme="dark"] {
+    --primary: #F8FAFC;
+    --slate: #94A3B8;
+    --accent: #2DD4BF;
+    --bg-gradient: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    --card: #1E293B;
+    --border: #334155;
+    --input-bg: #0F172A;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-gradient);
+    color: var(--slate);
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+/* Header styling */
+.app-header {
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-header h1 {
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+/* Layout Grid */
+.container {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+h2,
+h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+p.subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: var(--slate);
+}
+
+/* Inputs & Buttons */
+.input-group {
+    margin-bottom: 15px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    transition: 0.2s;
+    background: var(--input-bg);
+    color: var(--primary);
+}
+
+input:focus,
+select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: var(--accent);
+    color: #0F172A;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+}
+
+button.secondary {
+    background: var(--primary);
+    color: var(--card);
+}
+
+button.secondary:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button.danger {
+    background: transparent;
+    color: #EF4444;
+    border: 1px solid #EF4444;
+}
+
+button.danger:hover {
+    background: #EF4444;
+    color: white;
+}
+
+/* Lists & Outputs */
+.list-item {
+    background: var(--input-bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--primary);
+}
+
+.expense-item {
+    border-left: 4px solid var(--accent);
+}
+
+.text-green {
+    color: #059669;
+    font-weight: 700;
+    background: #D1FAE5;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.text-red {
+    color: #E11D48;
+    font-weight: 700;
+    background: #FFE4E6;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--slate);
+    font-style: italic;
+    padding: 20px;
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+}
+
+.optimization-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Graph Box */
+.graph-box {
+    height: 320px;
+    background: var(--input-bg);
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .optimization-grid {
+        grid-template-columns: 1fr;
+    }
+}

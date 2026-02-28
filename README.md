@@ -42,12 +42,10 @@ Same result, fewer transactions. With larger groups, the reduction is even bigge
 ## Architecture
 
 ```
-User → React + TypeScript Frontend → MongoDB
-                              ↓
-                    Settlement Algorithm
-                              ↓
-                    Optimized payments → UI
-```
+User → HTML + CSS → JAVASCRIPT
+                        ↓
+                    Backend
+
 
 
 ### Data Model

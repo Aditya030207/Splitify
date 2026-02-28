@@ -13,7 +13,7 @@ function toggleTheme() {
 
     if (currentTheme === 'dark') {
         body.removeAttribute('data-theme');
-        toggleBtn.innerHTML = ':crescent_moon: Dark Mode';
+        toggleBtn.innerHTML = '🌙 Dark Mode';
     } else {
         body.setAttribute('data-theme', 'dark');
         toggleBtn.innerHTML = ':sunny: Light Mode';

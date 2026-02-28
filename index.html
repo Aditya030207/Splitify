@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splitify | Smart Expense Splitting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="app-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <h1>Splitify</h1>
+        </div>
+        <button id="theme-toggle" onclick="toggleTheme()"
+            style="width: auto; margin: 0; padding: 8px 12px; background: var(--card); color: var(--primary); border: 1px solid var(--border);">🌙
+            Dark Mode</button>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="card">
+                <h2>👥 1. Add Participants</h2>
+                <div class="input-group">
+                    <input type="text" id="person-name" placeholder="Enter name (e.g., Alice)">
+                </div>
+                <button class="secondary" onclick="addPerson()">+ Add Person</button>
+                <div id="people-list" style="margin-top: 15px;"></div>
+            </div>
+
+            <div class="card">
+                <h2>💸 2. Add Expense</h2>
+                <div class="input-group">
+                    <input type="text" id="exp-desc" placeholder="What was it for? (e.g., Pizza)">
+                </div>
+                <div class="input-group">
+                    <input type="number" id="exp-amount" placeholder="Total Amount (₹)">
+                </div>
+                <div class="input-group">
+                    <select id="exp-category">
+                        <option value="🛒">🛒 General</option>
+                        <option value="🍔">🍔 Food & Dining</option>
+                        <option value="🚕">🚕 Transport</option>
+                        <option value="🎟️">🎟️ Entertainment</option>
+                        <option value="🏨">🏨 Accommodation</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <select id="exp-payer">
+                        <option value="">Who paid?</option>
+                    </select>
+                </div>
+                <button onclick="addExpense()">Split Equally</button>
+            </div>
+
+            <button class="danger" onclick="resetApp()">🗑️ Reset Everything</button>
+        </div>
+
+        <div class="main-content">
+
+            <div class="card" style="border-top: 4px solid var(--primary);">
+                <h2>Recent Expenses</h2>
+                <div id="expenses-list">
+                    <div class="empty-state">No expenses added yet.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Net Balances</h2>
+                <p class="subtitle">Who is up and who is down overall.</p>
+                <div id="balances-list">
+                    <div class="empty-state">Add an expense to calculate balances.</div>
+                </div>
+            </div>
+
+            <div class="card" style="border-top: 4px solid var(--accent);">
+                <h2>Debt Optimization Engine</h2>
+                <p class="subtitle">Converts complex debt webs into minimum transactions.</p>
+
+                <button class="secondary" onclick="runAlgorithm()" style="margin: 20px 0;">🚀 Run Minimum Cash Flow
+                    Algorithm</button>
+
+                <div id="algorithm-metrics"
+                    style="display: none; background: #D1FAE5; color: #065F46; padding: 12px; border-radius: 8px; margin-bottom: 20px; font-weight: 600; text-align: center; border: 1px solid #34D399;">
+                    ✨ Optimization Complete! Reduced transactions from <span id="metric-before">X</span> to <span
+                        id="metric-after">Y</span>.
+                </div>
+
+                <div class="optimization-grid">
+                    <div>
+                        <h3>Raw Debts (Before)</h3>
+                        <div id="raw-debts">
+                            <div class="empty-state">Pending...</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Optimized (After)</h3>
+                        <div id="optimized-debts">
+                            <div class="empty-state">Pending...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="graph-box" id="graph-container">
+                    <span style="color: #94A3B8;">Graph will appear here after optimization</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

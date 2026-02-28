@@ -1,4 +1,4 @@
-# Splitify — Group Expense Splitter
+# Splitify: Group Expense Splitter
 
 Split expenses with friends. Settle up with fewer payments.
 

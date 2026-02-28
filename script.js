@@ -16,7 +16,7 @@ function toggleTheme() {
         toggleBtn.innerHTML = '🌙 Dark Mode';
     } else {
         body.setAttribute('data-theme', 'dark');
-        toggleBtn.innerHTML = ':sunny: Light Mode';
+        toggleBtn.innerHTML = '☀️ Light Mode';
     }
 
     if (optimizedDebts.length > 0) drawGraph();

@@ -42,10 +42,10 @@ Same result, fewer transactions. With larger groups, the reduction is even bigge
 ## Architecture
 
 ```
-User → HTML + CSS → JAVASCRIPT
-                        ↓
-                    Backend
-
+User → HTML + JAVASCRIPT + CSS
+                ↓
+            BACKEND
+```
 
 
 ### Data Model

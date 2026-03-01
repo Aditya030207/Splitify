@@ -35,7 +35,7 @@ function addPerson() {
 function addExpense() {
     let desc = document.getElementById('exp-desc').value.trim();
     let amount = parseFloat(document.getElementById('exp-amount').value);
-    let category = document.getElementById('exp-category').value; // Get category emoji
+    let category = document.getElementById('exp-category').value; 
     let payer = document.getElementById('exp-payer').value;
 
     if (!desc || !payer || people.length < 2) {
@@ -56,7 +56,7 @@ function addExpense() {
 
     optimizedDebts = [];
     document.getElementById('graph-container').innerHTML = '<span style="color: #94A3B8;">Graph will appear here after optimization</span>';
-    document.getElementById('algorithm-metrics').style.display = 'none'; // Hide metrics on new expense
+    document.getElementById('algorithm-metrics').style.display = 'none'; 
     updateUI();
 }
 
@@ -130,7 +130,7 @@ function runAlgorithm() {
             metricsBox.style.background = '#FEF3C7'; 
             metricsBox.style.color = '#92400E';
             metricsBox.style.borderColor = '#FBBF24';
-            metricsBox.innerHTML = `:sparkles: Optimization Complete! Debts are already minimal (${optCount} transactions).`;
+            metricsBox.innerHTML = `Optimization Complete! Debts are already minimal (${optCount} transactions).`;
         }
     }
 
@@ -147,7 +147,7 @@ function resetApp() {
 }
 
 function updateUI() {
-    document.getElementById('people-list').innerHTML = people.map(p => `<div class="list-item" style="padding: 8px 12px;">:bust_in_silhouette: ${p}</div>`).join('');
+    document.getElementById('people-list').innerHTML = people.map(p => `<div class="list-item" style="padding: 8px 12px;"> ${p}</div>`).join('');
 
     document.getElementById('exp-payer').innerHTML = `<option value="">Who paid?</option>` + people.map(p => `<option value="${p}">${p}</option>`).join('');
 

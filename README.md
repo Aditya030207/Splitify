@@ -70,3 +70,7 @@ User → HTML + JAVASCRIPT + CSS
 - Handeling of situations where one or more accounts refuse/fail to make payment.
 
 ---
+
+## Deployment Link
+
+- https://spilitify.netlify.app/

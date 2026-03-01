@@ -73,4 +73,4 @@ User → HTML + JAVASCRIPT + CSS
 
 ## Deployment Link
 
-- https://spilitify.netlify.app/
+- https://splitify1.netlify.app/

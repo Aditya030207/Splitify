@@ -1,0 +1,26 @@
+.loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--espresso);
+  display: flex; align-items: center; justify-content: center;
+}
+.content { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.cupWrapper { position: relative; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; }
+.cup { width: 60px; height: 60px; animation: rotateCup 2s linear infinite; }
+@keyframes rotateCup { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid transparent; border-top-color: var(--gold);
+  animation: spinRing 1s linear infinite;
+}
+@keyframes spinRing { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.title { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 2rem; letter-spacing: 0.1em; }
+.subtitle { color: var(--cream-dark); font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; }
+.dotsWrapper { display: flex; gap: 0.5rem; }
+.dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
+  animation: bounce 1.4s ease-in-out infinite;
+}
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes bounce { 0%, 80%, 100% { transform: scale(0); opacity: 0.4; } 40% { transform: scale(1); opacity: 1; } }

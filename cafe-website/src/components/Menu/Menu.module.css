@@ -1,0 +1,63 @@
+.menu {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, var(--espresso) 0%, var(--dark-brown) 100%);
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.header { text-align: center; margin-bottom: 3rem; opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+.header.visible { opacity: 1; transform: translateY(0); }
+.eyebrow { color: var(--gold); font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; display: block; margin-bottom: 0.75rem; }
+.title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--cream); margin-bottom: 1rem; }
+.subtitle { color: var(--cream-dark); opacity: 0.7; max-width: 500px; margin: 0 auto; line-height: 1.7; font-size: 0.95rem; }
+.filters {
+  display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 3rem; flex-wrap: wrap;
+  opacity: 0; transform: translateY(20px); transition: all 0.7s ease 0.2s;
+}
+.filters.visible { opacity: 1; transform: translateY(0); }
+.filterBtn {
+  padding: 0.6rem 1.5rem; border-radius: 25px; border: 1px solid rgba(201,168,76,0.3);
+  background: transparent; color: var(--cream); cursor: pointer; font-size: 0.9rem;
+  letter-spacing: 0.05em; transition: all 0.3s ease;
+}
+.filterBtn:hover { border-color: var(--gold); color: var(--gold); }
+.filterBtn.active { background: var(--gold); color: var(--espresso); border-color: var(--gold); font-weight: 700; }
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem;
+}
+.card {
+  background: rgba(44, 24, 16, 0.6); border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 16px; padding: 1.75rem; position: relative; overflow: hidden;
+  transition: all 0.4s ease; cursor: pointer;
+  opacity: 0; transform: translateY(30px);
+}
+.card.cardVisible { opacity: 1; transform: translateY(0); }
+.card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 100%);
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.card:hover { transform: translateY(-6px); border-color: rgba(201,168,76,0.5); box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 20px rgba(201,168,76,0.1); }
+.card:hover::before { opacity: 1; }
+.badge {
+  position: absolute; top: 1rem; right: 1rem;
+  background: var(--gold); color: var(--espresso);
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.2rem 0.6rem; border-radius: 20px;
+}
+.cardEmoji { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+.cardContent { display: flex; flex-direction: column; gap: 0.5rem; }
+.cardName { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--cream); }
+.cardDesc { color: var(--cream-dark); opacity: 0.65; font-size: 0.85rem; line-height: 1.6; flex: 1; }
+.cardFooter { display: flex; align-items: center; justify-content: space-between; margin-top: 1rem; }
+.cardPrice { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.1rem; font-weight: 600; }
+.orderBtn {
+  background: transparent; border: 1px solid rgba(201,168,76,0.4); color: var(--gold);
+  padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.8rem; cursor: pointer;
+  transition: all 0.3s ease; letter-spacing: 0.05em;
+}
+.orderBtn:hover { background: var(--gold); color: var(--espresso); }
+@media (max-width: 768px) {
+  .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+}
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}
